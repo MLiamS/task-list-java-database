@@ -1,0 +1,15 @@
+<!--tasks.vtl-->
+<h1>Task list!</h1>
+
+#if ($tasksInCategory)
+  <ul>
+    #foreach ($task in $tasksInCategory)
+      <li><a href="/categories/category.getId()/tasks/$task.getId()">$task.getDescription()</a></li>
+    #end
+  </ul>
+#else
+  <p>No tasks!</p>
+#end
+
+<a href="/categories/category.getId()/tasks/new">Add New Task</a>
+<!--tasks.vtl-->
